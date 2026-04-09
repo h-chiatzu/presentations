@@ -1088,8 +1088,18 @@ html, body {
       <span class="tag">附錄</span>
       <h2>目前進展</h2>
     </div>
-    <div class="slide-body">
-      <!-- 內容待補 -->
+    <div class="slide-body" style="display:flex; justify-content:flex-start; align-items:flex-start; padding:1.5rem 2.5rem;">
+      <ol style="font-size:1.05rem; line-height:2; color:var(--text); text-align:left; padding-left:1.2rem;">
+        <li>目前串了既有五個資料庫，另有英文、印尼文等外文新聞資料庫尚未串接<br><span style="font-size:0.92rem; color:var(--text-muted);">（也不確定是否需要串接，有些是與中文重複的新聞純粹是語系不同）</span></li>
+        <li>在 MCP Server 上串接使用者資訊，可管理各資料內容</li>
+        <li>評測任務：
+          <ol style="padding-left:1.2rem; margin-top:0.3rem;">
+            <li>與新聞所謝吉隆老師討論，目前初步會先聚焦在模型從 Query 產生「搜尋 Schema」的行為是否準確做相關討論<br><span style="font-size:0.92rem; color:var(--text-muted);">（例：「伊朗與美國最新進展」→「美國 伊朗」）</span></li>
+            <li>比較各家模型（gpt-4o-mini, claude-sonnet）串接 CNA MCP 的行為</li>
+          </ol>
+        </li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1JlA4YeI482ucD9kygme3U_x2QfJZgiRz/edit?usp=sharing&ouid=107752280136727519888&rtpof=true&sd=true" target="_blank" style="color:var(--accent); text-decoration:underline;">測試結果試算表</a></li>
+      </ol>
     </div>
   </div>
 
@@ -1099,11 +1109,13 @@ html, body {
       <span class="tag">附錄</span>
       <h2>Twinkle AI T1 模型 Feedback</h2>
     </div>
-    <div class="slide-body">
-      <ul style="font-size:1.05rem; line-height:1.9; color:var(--fg); max-width:820px; margin:0 auto; padding:0 1.5rem;">
-        <li>T1 3B 模型在面對超出其最佳回答範圍的問題時，傾向產出過多內容，導致回覆冗長、重點模糊，反而降低資訊品質</li>
-      </ul>
-      <div style="text-align:center; margin-top:2rem;">
+    <div class="slide-body" style="display:flex; flex-direction:column; justify-content:flex-start; align-items:flex-start; padding:1.5rem 2.5rem;">
+      <ol style="font-size:1.05rem; line-height:2; color:var(--text); text-align:left; padding-left:1.2rem;">
+        <li>T1 3B 模型在面對超出其最佳回答範圍的問題時，傾向產出過多內容，雖然是有回答到問題，但回覆會稍冗長且重點模糊</li>
+        <li>T1 模型從 Query 產生「搜尋 Schema」的能力（或 Function Call 能力）是否能應用在 MCP 當中，我們也在思考這一部分 🤔</li>
+        <li>T1 能接（或建議接）MCP 嗎？</li>
+      </ol>
+      <div style="text-align:center; margin-top:2rem; width:100%;">
         <a href="compare_versions.html" target="_blank" class="code-btn" style="display:inline-flex; align-items:center; gap:6px; padding:10px 22px; font-size:0.95rem; text-decoration:none;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           版本比較
